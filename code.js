@@ -39,6 +39,17 @@ const karens = [
     link: "https://www.youtube.com/watch?v=b9oJtSpOQhY",
     image: "images/karen_dallas_1_320x280.jpg",
   },
+  {
+    user: "BBQBecky",
+    age: "43",
+    location: "Oakland, CA",
+    summary_title: "I spend a lot of time thinking about",
+    summary:
+      "Other people's business and park rules and ordinances regarding charcoal grills.",
+    link:
+      "https://www.nytimes.com/2018/10/22/opinion/calling-police-racism-wyt-fear.html",
+    image: "images/karen_oakland_1_320x280.jpg",
+  },
 ];
 
 $(function () {
