@@ -1,12 +1,7 @@
 // TODO: rotate thru background colors
 // TODO: pick random karens
-// pink - f7c7e0
-// pink - e6a4c0
-// teal - 5ac1f7
-// teal - 63d4ee
-// green - 57b96f
 
-const karens = [
+let karens = [
   {
     user: "CPKaren83",
     age: "37",
@@ -53,6 +48,8 @@ const karens = [
 ];
 
 $(function () {
+  setBGColor();
+  shuffle(karens);
   for (k of karens) {
     html = getHTML(k);
     $(".boxes").append(html);
@@ -79,4 +76,30 @@ function getHTML(k) {
     <div class="summary">${k.summary}</div>
   </div>
 </div>`;
+}
+
+function setBGColor() {
+  const colors = ["#f7c7e0", "#e6a4c0", "#5ac1f7", "#63d4ee", "#57b96f"];
+  const i = Math.floor(Math.random() * colors.length);
+  $("html").css("background-color", colors[i]);
+}
+
+function shuffle(array) {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 }
